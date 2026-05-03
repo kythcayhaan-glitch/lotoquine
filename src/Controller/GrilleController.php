@@ -30,10 +30,15 @@ class GrilleController extends AbstractController
     #[Route('/api/numeros', name: 'api_numeros')]
     public function apiNumeros(EntityManagerInterface $em): JsonResponse
     {
-        $sortis = $em->getRepository(NumeroSorti::class)->findAll();
+        $sortis = $em->getRepository(NumeroSorti::class)->findBy([], ['id' => 'ASC']);
         $liste = array_map(fn($n) => $n->getNumero(), $sortis);
+        $dernier = count($liste) > 0 ? end($liste) : null;
 
-        return $this->json($liste);
+        return $this->json([
+            'sortis'  => $liste,
+            'dernier' => $dernier,
+            'compte'  => count($liste),
+        ]);
     }
 
     #[Route('/numero/{n}', name: 'toggle_numero', methods: ['POST'])]

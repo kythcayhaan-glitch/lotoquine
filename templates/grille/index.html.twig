@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Lotoquine</title>
-    <link rel="stylesheet" href="{{ asset('css/grille.css') }}?v=2">
+    <link rel="stylesheet" href="{{ asset('css/grille.css') }}?v=3">
 </head>
 <body>
     <h1>Lotoquine</h1>
-    <button id="reset">Remettre à zéro</button>
+    <div id="barre-info">
+        <span id="compteur">0 / 90</span>
+        <button id="reset">Remettre à zéro</button>
+    </div>
     <div id="grille">
         {% for numero in numeros %}
             <button class="case" data-numero="{{ numero }}">{{ numero }}</button>
         {% endfor %}
     </div>
-    <script src="{{ asset('js/grille.js') }}?v=2"></script>
+    <script src="{{ asset('js/grille.js') }}?v=3"></script>
 </body>
 </html>

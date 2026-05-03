@@ -1,15 +1,20 @@
 function syncAffichage() {
     fetch('/api/numeros')
         .then(function (r) { return r.json(); })
-        .then(function (sortis) {
+        .then(function (data) {
             document.querySelectorAll('.case').forEach(function (btn) {
                 var n = parseInt(btn.dataset.numero);
-                if (sortis.includes(n)) {
+                if (data.sortis.includes(n)) {
                     btn.classList.add('sorti');
                 } else {
                     btn.classList.remove('sorti');
                 }
             });
+
+            var dernier = document.getElementById('dernier-numero');
+            dernier.textContent = data.dernier !== null ? data.dernier : '-';
+
+            document.getElementById('compteur').textContent = data.compte + ' / 90';
         });
 }
 
