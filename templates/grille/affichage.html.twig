@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Lotoquine — Affichage</title>
+    <link rel="stylesheet" href="{{ asset('css/grille.css') }}?v=2">
+</head>
+<body>
+    <h1>Lotoquine</h1>
+    <div id="grille" class="lecture-seule">
+        {% for numero in numeros %}
+            <button class="case" data-numero="{{ numero }}">{{ numero }}</button>
+        {% endfor %}
+    </div>
+    <script src="{{ asset('js/affichage.js') }}?v=2"></script>
+</body>
+</html>
