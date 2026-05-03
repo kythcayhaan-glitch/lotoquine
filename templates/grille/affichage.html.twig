@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Lotoquine — Affichage</title>
-    <link rel="stylesheet" href="{{ asset('css/grille.css') }}?v=3">
+    <link rel="stylesheet" href="{{ asset('css/grille.css') }}?v=4">
 </head>
 <body>
+    <button id="btn-fullscreen" title="Plein écran">⛶ Plein écran</button>
     <h1>Lotoquine</h1>
     <div id="dernier-bloc">
         <div id="dernier-label">Dernier numéro</div>
@@ -17,6 +18,6 @@
             <button class="case" data-numero="{{ numero }}">{{ numero }}</button>
         {% endfor %}
     </div>
-    <script src="{{ asset('js/affichage.js') }}?v=3"></script>
+    <script src="{{ asset('js/affichage.js') }}?v=4"></script>
 </body>
 </html>

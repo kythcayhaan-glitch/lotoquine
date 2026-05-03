@@ -20,3 +20,16 @@ function syncAffichage() {
 
 syncAffichage();
 setInterval(syncAffichage, 1000);
+
+document.getElementById('btn-fullscreen').addEventListener('click', function () {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+});
+
+document.addEventListener('fullscreenchange', function () {
+    var btn = document.getElementById('btn-fullscreen');
+    btn.textContent = document.fullscreenElement ? '✕ Quitter' : '⛶ Plein écran';
+});
