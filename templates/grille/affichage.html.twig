@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Lotoquine — Affichage</title>
-    <link rel="stylesheet" href="{{ asset('css/grille.css') }}?v=4">
+    <link rel="stylesheet" href="{{ asset('css/grille.css') }}?v=6">
 </head>
 <body>
     <button id="btn-fullscreen" title="Plein écran">⛶ Plein écran</button>
@@ -13,11 +13,15 @@
         <div id="dernier-numero">-</div>
         <div id="compteur">0 / 90</div>
     </div>
+    <div id="numeros-sortis-bloc">
+        <div id="numeros-sortis-label">Numéros sortis</div>
+        <div id="numeros-sortis"></div>
+    </div>
     <div id="grille" class="lecture-seule">
         {% for numero in numeros %}
             <button class="case" data-numero="{{ numero }}">{{ numero }}</button>
         {% endfor %}
     </div>
-    <script src="{{ asset('js/affichage.js') }}?v=4"></script>
+    <script src="{{ asset('js/affichage.js') }}?v=5"></script>
 </body>
 </html>

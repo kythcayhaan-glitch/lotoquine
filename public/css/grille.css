@@ -42,6 +42,41 @@ h1 {
     background: #b71c1c;
 }
 
+#numeros-sortis-bloc {
+    width: 700px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#numeros-sortis-label {
+    font-size: 14px;
+    color: #aaaaaa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+#numeros-sortis {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    min-height: 36px;
+}
+
+.badge-sorti {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background: #e53935;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+}
+
 #grille {
     display: grid;
     grid-template-columns: repeat(10, 70px);

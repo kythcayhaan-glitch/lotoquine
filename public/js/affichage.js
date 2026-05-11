@@ -15,6 +15,15 @@ function syncAffichage() {
             dernier.textContent = data.dernier !== null ? data.dernier : '-';
 
             document.getElementById('compteur').textContent = data.compte + ' / 90';
+
+            var conteneur = document.getElementById('numeros-sortis');
+            conteneur.innerHTML = '';
+            data.sortis.forEach(function (n) {
+                var span = document.createElement('span');
+                span.className = 'badge-sorti';
+                span.textContent = n;
+                conteneur.appendChild(span);
+            });
         });
 }
 
